@@ -144,9 +144,17 @@ int largestValue(LinkedList *list) {
 
   // TODO: Insert code here to calculate and return
   //   largest value in list (which may not be unique).
-
-  return -42; // STUB!  Replace this line with correct code
-
+  int max = list->head->data;
+  Node *p = list->head;
+  while (p != NULL)
+  {
+	  if (p->data > max)
+	  {
+		  max = p->data;
+	  }
+	  p = p->next;
+  }
+  return max;
 }
 
 // list: ptr to a linked list of Node (each with int data, and Node * next)
@@ -163,9 +171,17 @@ int smallestValue(LinkedList *list) {
 
   // TODO: Insert code here to calculate and return
   //   smallest value in list (which may not be unique).
-
-  return -42; // STUB!  Replace this line with correct code
-
+  int min = list->head->data;
+  Node *p = list->head;
+  while (p != NULL)
+  {
+	  if (p->data < min)
+	  {
+		  min = p->data;
+	  }
+	  p = p->next;
+  }
+  return min;
 }
 
 // list: ptr to a linked list of Node (each with int data, and Node * next)
@@ -182,8 +198,13 @@ int sum(LinkedList * list) {
 
   // TODO: Insert code here to calculate and return
   //   sum of all values in list (0 if there are none).
-
-  return -42; // STUB!  Replace this line with correct code
-
+  int sum = 0;
+  Node *p = list->head;
+  while (p != NULL)
+  {
+	  sum += p->data;
+	  p = p->next;
+  }
+  return sum;
 }
 
